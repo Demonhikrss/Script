@@ -21,16 +21,12 @@ TextButton.Text = "Дюпнуть семена"
 
 local cooldown = false
 local seeds = {
-    "Carrot Seed", "Strawberry Seed", "Blueberry Seed", "Orange Tulip",
-    "Tomato Seed", "Corn Seed", "Daffodil Seed", "Watermelon Seed",
-    "Pumpkin Seed", "Apple Seed", "Bamboo Seed", "Coconut Seed",
-    "Cactus Seed", "Dragon Fruit Seed", "Mango Seed", "Grape Seed",
-    "Mushroom Seed"
+    "Bamboo Seed"
 }
 
 TextButton.MouseButton1Click:Connect(function()
     if cooldown then
-        TextButton.Text = "Жди 60 сек!"
+        TextButton.Text = "Жди 10 сек!"
         return
     end
 
@@ -55,9 +51,9 @@ TextButton.MouseButton1Click:Connect(function()
         warn("Ошибка при дюпе семян:", err)
     end
 
-    TextButton.Text = "Подождите 60 сек..."
-    wait(60)
-    TextButton.Text = "Дюпнуть семена"
+    TextButton.Text = "Подождите 10 сек..."
+    wait(10)
+    TextButton.Text = "Dupe"
     TextButton.BackgroundColor3 = Color3.fromRGB(50, 200, 50)
-    cooldown = false
+    cooldown = 10 
 end)
